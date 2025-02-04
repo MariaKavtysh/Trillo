@@ -1,31 +1,41 @@
 /* Header, Search, User Navigation */
 .logo {
+  height: 3.25rem;
 }
+
 .search {
+  &__input {
+  }
+
+  &__button {
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+  }
 }
-.search__input {
-}
-.search__button {
-}
-.search__icon {
-}
+
 .user-nav {
-}
-.user-nav__icon-box {
-}
-.user-nav__icon {
-}
-.user-nav__notification {
-}
-.user-nav__user {
-}
-.user-nav__user-photo {
-}
-.user-nav__user-name {
-}
-.content {
-}
-.sidebar {
-}
-.hotel-view {
+  &__icon-box {
+  }
+
+  &__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+
+  &__notification {
+  }
+
+  &__user {
+  }
+
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+  }
+
+  &__user-name {
+  }
 }
