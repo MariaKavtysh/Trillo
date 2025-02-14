@@ -1,18 +1,29 @@
+@use '../globals/base' as b;
+
 .side-nav {
   list-style: none;
   font-size: 1.4rem;
   margin-top: 3.5rem;
 
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  @media only screen and (max-width: b.$bp-medium) {
+    display: flex; //to put links side by side horizontally//
+    margin: 0;
+  }
 
   &__item {
     position: relative;
 
-    // &:not(:last-child) {
-    //   margin-bottom: 0.5rem;
-    // }
+    @media only screen and (max-width: b.$bp-medium) {
+      flex: 1;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+
+      @media only screen and (max-width: b.$bp-medium) {
+        margin: 0;
+      }
+    }
 
     &::before {
       content: '';
@@ -41,6 +52,11 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+
+    @media only screen and (max-width: b.$bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
 
     text-decoration: none;
     color: var(--color-grey-light-1);
@@ -71,4 +87,8 @@
   font-size: 1.2rem;
   text-align: center;
   padding: 2.5rem;
+
+  @media only screen and (max-width: b.$bp-medium) {
+    display: none;
+  }
 }

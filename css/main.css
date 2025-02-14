@@ -28,7 +28,7 @@ Grey dark 3: #999
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-  --shadow-light: 0 2 5rem rgba(0, 0, 0, 0.06);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
   --line: 1px solid var(--color-grey-light-2);
 }
 
@@ -48,6 +48,11 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 62.5%;
+}
+@media only screen and (max-width: 68.75em) {
+  html {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -70,6 +75,12 @@ body {
           box-shadow: var(--shadow-dark);
   min-height: 50rem;
 }
+@media only screen and (max-width: 75em) {
+  .container {
+    margin: 0;
+    max-width: 150rem;
+  }
+}
 
 .header {
   font-size: 1.4rem;
@@ -91,6 +102,14 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+@media only screen and (max-width: 56.25em) {
+  .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -118,12 +137,18 @@ body {
 }
 
 .details {
-  background-color: var(--color-grey-light-2);
+  font-size: 1.4rem;
+  background-color: var(--color-grey-light-1);
   padding: 4.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-bottom: var(--line);
+}
+@media only screen and (max-width: 56.25em) {
+  .details {
+    padding: 3rem;
+  }
 }
 
 .description {
@@ -136,6 +161,12 @@ body {
   padding: 3rem;
   -webkit-box-shadow: var(--shadow-light);
           box-shadow: var(--shadow-light);
+}
+@media only screen and (max-width: 56.25em) {
+  .description {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
 }
 
 .user-reviews {
@@ -293,17 +324,32 @@ body {
   list-style: none;
   font-size: 1.4rem;
   margin-top: 3.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 0.5rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .side-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+  }
 }
 .side-nav__item {
   position: relative;
+}
+@media only screen and (max-width: 56.25em) {
+  .side-nav__item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+.side-nav__item:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .side-nav__item:not(:last-child) {
+    margin: 0;
+  }
 }
 .side-nav__item::before {
   content: "";
@@ -345,6 +391,14 @@ body {
   position: relative;
   z-index: 10;
 }
+@media only screen and (max-width: 56.25em) {
+  .side-nav__link:link, .side-nav__link:visited {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 2rem;
+  }
+}
 .side-nav__icon {
   height: 1.75rem;
   width: 1.75rem;
@@ -355,6 +409,11 @@ body {
   font-size: 1.2rem;
   text-align: center;
   padding: 2.5rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .legal {
+    display: none;
+  }
 }
 
 .gallery {
@@ -569,7 +628,6 @@ body {
 }
 
 .user-reviews {
-  font-size: 1.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -580,7 +638,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: var(--color-grey-light-2);
 }
 
 .review {
@@ -590,17 +647,13 @@ body {
   padding: 3rem;
   margin-bottom: 3.5rem;
   position: relative;
+  overflow: hidden;
 }
-.review::before {
-  content: "“";
-  font-size: 20rem;
-  font-family: sans-serif;
-  line-height: 1;
-  color: var(--color-grey-light-2);
-  position: absolute;
-  top: -2.75rem;
-  left: -1rem;
-  z-index: 1;
+@media only screen and (max-width: 56.25em) {
+  .review {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 }
 .review__text {
   position: relative;
@@ -639,6 +692,17 @@ body {
   font-size: 2.2rem;
   font-weight: 300;
   color: var(--primary);
+}
+.review::before {
+  content: "“";
+  font-size: 20rem;
+  font-family: sans-serif;
+  line-height: 1;
+  color: var(--color-grey-light-2);
+  position: absolute;
+  top: -2.75rem;
+  left: -1rem;
+  z-index: 1;
 }
 
 .cta__text {
