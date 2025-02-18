@@ -28,6 +28,11 @@
     font-size: 2.25rem;
     font-weight: 300;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: b.$bp-medium) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -59,18 +64,30 @@
     padding: 0 2.25rem;
     background-color: var(--primary);
     color: #fff;
+
+    @media only screen and (max-width: b.$bp-medium) {
+      padding: 0 1.5rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+
+    @media only screen and (max-width: b.$bp-medium) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
-    display: block;
+    // display: block;
     font-size: 0.8rem;
     text-transform: uppercase;
+
+    @media only screen and (max-width: b.$bp-medium) {
+      font-size: 0.5rem;
+    }
   }
 }
 
@@ -171,9 +188,6 @@
   align-items: center;
   justify-content: space-between;
 
-  //   &__count {
-  //   }
-
   &__friends {
     display: flex;
   }
@@ -194,12 +208,14 @@
 /////////////////////////////////
 // USER REVIEWS //
 .user-reviews {
-  // font-size: 1.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // background-color: var(--color-grey-light-2);
 }
+
+// .user-reviews > .btn-inline {
+//   align-self: center;
+// }
 
 .review {
   box-shadow: var(--shadow-light);
